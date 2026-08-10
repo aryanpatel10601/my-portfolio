@@ -1,0 +1,10 @@
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Prevent indexing of private/PDF files if you don't want them scraped as standalone pages
+Disallow: /ResumeFSD.pdf
+
+# Tell crawlers exactly where to find your sitemap
+Sitemap: https://aryan-patel-106.vercel.app/sitemap.xml
