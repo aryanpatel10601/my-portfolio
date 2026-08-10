@@ -997,7 +997,6 @@ function handleTouchEnd(e) {
         updatePointerUpData(pointer);
     }
 }
-
 window.addEventListener('mousedown', handleMouseDown);
 window.addEventListener('mousemove', handleMouseMove);
 window.addEventListener('touchstart', handleTouchStart);

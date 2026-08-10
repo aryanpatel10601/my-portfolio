@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light overflow-x-hidden" lang="en"><head>
+<html class="dark overflow-x-hidden" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Favicon -->
@@ -32,9 +32,8 @@
 <meta property="twitter:description" content="Portfolio of Aryan Patel, a Full Stack Developer and Data Analyst from India specializing in React, Next.js, Node.js, and building scalable web applications." />
 <meta property="twitter:image" content="https://aryan-patel-106.vercel.app/aryan-img.jpeg" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Geist:wght@600;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Geist:wght@600;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script id="tailwind-config">
@@ -166,6 +165,13 @@
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
         /* Hero Animation Styles */
@@ -676,16 +682,17 @@
 <section class="py-section-padding px-gutter" id="projects">
     <div class="max-w-[1000px] mx-auto">
         <!-- Header -->
-        <div data-aos="fade-up" class="mb-16 text-left">
+        <div data-aos="fade-up" class="mb-32 md:mb-40 text-left">
             <span class="font-label-caps text-xs text-secondary dark:text-primary-fixed tracking-[0.2em] uppercase font-bold">WORK</span>
             <h2 class="font-display-lg-mobile md:font-display-lg text-[48px] md:text-[64px] font-extrabold text-on-surface dark:text-white leading-none mt-2 mb-4 tracking-tight">
                 Projects
             </h2>
         </div>
 
-        <div class="flex flex-col gap-32 pb-32">
+        <div class="projects-wrapper w-full px-4 md:px-0">
+            <div id="projects-pin-container" class="relative w-full max-w-[1000px] mx-auto h-[80vh] md:h-[70vh]">
             <!-- Project 1 -->
-            <div class="sticky top-24 z-10 flex flex-col lg:flex-row gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black transition-all duration-500">
+            <div class="project-card absolute top-0 left-0 w-full z-[30] flex flex-col lg:flex-row gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black h-full overflow-hidden">
                 <!-- Image Side -->
                 <div class="w-full lg:w-[55%] relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group aspect-video">
                     <img alt="Aditya Almirah Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="aditya-web.png"/>
@@ -731,7 +738,7 @@
             </div>
 
             <!-- Project 2 (Reversed) -->
-            <div class="sticky top-32 z-20 flex flex-col lg:flex-row-reverse gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black transition-all duration-500">
+            <div class="project-card absolute top-0 left-0 w-full z-[20] flex flex-col lg:flex-row-reverse gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black h-full overflow-hidden">
                 <!-- Image Side -->
                 <div class="w-full lg:w-[55%] relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group aspect-video">
                     <img alt="HAPL Controls Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="hapl-web.png"/>
@@ -774,7 +781,7 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="sticky top-40 z-30 flex flex-col lg:flex-row gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black transition-all duration-500">
+            <div class="project-card absolute top-0 left-0 w-full z-[10] flex flex-col lg:flex-row gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black h-full overflow-hidden">
                 <!-- Image Side -->
                 <div class="w-full lg:w-[55%] relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group aspect-video">
                     <img alt="Personal Portfolio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="aryan-web.png"/>
@@ -1013,6 +1020,9 @@
 <!-- Fluid Simulation Script -->
 <script src="splashCursor.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- GSAP & ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script>
     // Initialize Animate On Scroll
     AOS.init({
@@ -1103,6 +1113,74 @@
         // Reset and close
         closeWhatsAppModal();
         document.getElementById('waForm').reset();
+    }
+
+    // GSAP Scroll Stack Animation for Project Cards
+    gsap.registerPlugin(ScrollTrigger);
+    
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (!prefersReducedMotion) {
+        const cards = gsap.utils.toArray('.project-card');
+        
+        // Initial setup for stacked cards behind each other
+        cards.forEach((card, index) => {
+            if (index > 0) {
+                gsap.set(card, {
+                    y: -30 * index,
+                    scale: 1 - (0.05 * index),
+                    opacity: 1 - (0.15 * index),
+                    transformOrigin: "top center"
+                });
+            }
+        });
+
+        // Create scroll timeline
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#projects-pin-container",
+                pin: true,
+                start: "center center",
+                end: "+=2500", // Increased scroll distance for longer holds
+                scrub: 1,
+                preventOverlaps: true,
+                fastScrollEnd: true
+            }
+        });
+
+        // Animate each card off the stack with a "hold and fast shift" effect
+        cards.forEach((card, index) => {
+            if (index < cards.length - 1) {
+                // By spacing the start times (0, 1, 2) and using a short duration (0.25),
+                // we create a period of no animation (a "hold") between shifts.
+                const startTime = index * 1; 
+                const animDuration = 0.25; // Fast shift
+
+                // The current top card swipes OUT (UP) and fades
+                tl.to(card, {
+                    y: -window.innerHeight,
+                    opacity: 0,
+                    scale: 0.9,
+                    duration: animDuration,
+                    ease: "power2.inOut"
+                }, startTime); 
+
+                // The cards behind move up and scale to become the new top card
+                for (let j = index + 1; j < cards.length; j++) {
+                    const offset = j - (index + 1);
+                    tl.to(cards[j], {
+                        y: -30 * offset,
+                        scale: 1 - (0.05 * offset),
+                        opacity: 1 - (0.15 * offset),
+                        duration: animDuration,
+                        ease: "power2.inOut"
+                    }, startTime);
+                }
+            }
+        });
+        
+        // Add a tiny empty tween at the end to hold the last card before unpinning
+        tl.to({}, {duration: 0.5});
     }
 </script>
 </body></html>
