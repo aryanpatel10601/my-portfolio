@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 
-<html class="dark overflow-x-hidden" lang="en"><head>
+<html class="overflow-x-hidden scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- Favicon -->
 <link rel="icon" type="image/jpeg" href="aryan-img.jpeg" />
 <!-- Primary Meta Tags -->
-<title>Aryan Patel (Hari-Shankar) | Full Stack Developer & Data Analyst</title>
-<meta name="title" content="Aryan Patel (Hari-Shankar) | Full Stack Developer & Data Analyst" />
+<title>Aryan Patel / Hari-Shankar | Full Stack Developer & Data Analyst</title>
+<meta name="title" content="Aryan Patel / Hari-Shankar | Full Stack Developer & Data Analyst" />
 <meta name="description" content="Portfolio of Aryan Patel, a Full Stack Developer and Data Analyst from India specializing in React, Next.js, Node.js, and building scalable web applications." />
 <meta name="keywords" content="Aryan Patel, Full Stack Developer, Data Analyst, React Developer, Next.js, Node.js Developer, Web Development India" />
 <meta name="author" content="Aryan Patel" />
@@ -25,6 +25,16 @@
 <meta property="og:image" content="https://aryan-patel-106.vercel.app/aryan-img.jpeg" />
 <meta property="og:site_name" content="Aryan Patel Portfolio" />
 <meta property="og:locale" content="en_IN" />
+
+<!-- JSON-LD Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+      "@type": "WebSite",
+  "name": "Aryan Patel",
+  "url": "https://aryan-patel-106.vercel.app/"
+}
+</script>
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
@@ -918,7 +928,7 @@
 </section>
 <!-- Contact & Footer Section -->
 <section class="py-section-padding px-gutter relative overflow-hidden flex flex-col items-center text-center mt-20" id="contact">
-    <div class="max-w-[1000px] w-full mx-auto relative z-10 pt-10 pb-32">
+    <div class="max-w-[1000px] w-full mx-auto relative z-10 pt-10 pb-20">
         
         <!-- Heading Area -->
         <div data-aos="zoom-in" class="mb-16">
@@ -969,16 +979,18 @@
             
         </div>
         
-        <div class="text-left w-full text-on-surface-variant/60 dark:text-white/40 text-[13px] font-medium">
-            © 2026 Aryan Patel. All rights reserved.
-        </div>
     </div>
 
     <!-- Massive Background Text -->
-    <div class="absolute bottom-0 left-0 w-full text-center pointer-events-none select-none z-0 pb-[2vw]">
+    <div class="absolute bottom-0 left-0 w-full text-center pointer-events-none select-none z-0 pb-12">
         <h1 class="text-[18vw] font-black text-black/[0.06] dark:text-white/[0.04] leading-none m-0 p-0 tracking-tighter whitespace-nowrap">
             Aryan Patel
         </h1>
+    </div>
+
+    <!-- Copyright -->
+    <div class="absolute bottom-4 left-0 w-full text-center text-on-surface-variant/80 dark:text-white/60 text-[13px] font-medium z-20">
+        © 2026 Aryan Patel. All rights reserved.
     </div>
 </section>
 
@@ -1027,8 +1039,8 @@
 <script>
     // Initialize Animate On Scroll
     AOS.init({
-        duration: 800,
-        once: true,
+        duration: 1000,
+        once: false,
         offset: 100,
         easing: 'ease-out-cubic'
     });
@@ -1062,7 +1074,8 @@
     const themeToggleBtn = document.getElementById('theme-toggle');
     const html = document.documentElement;
 
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    // Default to light mode unless the user explicitly saved 'dark' in localStorage
+    if (localStorage.theme === 'dark') {
         html.classList.add('dark');
     } else {
         html.classList.remove('dark');
@@ -1142,8 +1155,8 @@
                 trigger: "#projects-pin-container",
                 pin: true,
                 start: "center center",
-                end: "+=2500", // Increased scroll distance for longer holds
-                scrub: 1,
+                end: "+=600", // Very short scroll distance for fast changes
+                scrub: 0.1,    // Extremely fast and smooth snap
                 preventOverlaps: true,
                 fastScrollEnd: true
             }
