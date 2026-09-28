@@ -1913,8 +1913,8 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 </div>
 
-<!-- Fluid Simulation Script -->
-<script src="splashCursor.js"></script>
+<!-- Fluid Simulation Script (Commented out to improve scroll performance) -->
+<!-- <script src="splashCursor.js"></script> -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <!-- GSAP & ScrollTrigger -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -1923,7 +1923,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize Animate On Scroll
     AOS.init({
         duration: 1000,
-        once: false,
+        once: true,
         offset: 100,
         easing: 'ease-out-cubic'
     });
