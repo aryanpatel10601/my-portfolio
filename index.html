@@ -6,8 +6,8 @@
 <!-- Favicon -->
 <link rel="icon" type="image/jpeg" href="aryan-img.jpeg" />
 <!-- Primary Meta Tags -->
-<title>Aryan Patel / Hari-Shankar | Full Stack Developer & Data Analyst</title>
-<meta name="title" content="Aryan Patel / Hari-Shankar | Full Stack Developer & Data Analyst" />
+<title>Aryan Patel / Hari | Full Stack Developer</title>
+<meta name="title" content="Aryan Patel / Hari | Full Stack Developer" />
 <meta name="description" content="Portfolio of Aryan Patel, a Full Stack Developer and Data Analyst from India specializing in React, Next.js, Node.js, and building scalable web applications." />
 <meta name="keywords" content="Aryan Patel, Full Stack Developer, Data Analyst, React Developer, Next.js, Node.js Developer, Web Development India" />
 <meta name="author" content="Aryan Patel" />
@@ -20,9 +20,9 @@
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://aryan-patel-106.vercel.app/" />
-<meta property="og:title" content="Aryan Patel | Full Stack Developer & Data Analyst" />
-<meta property="og:description" content="Portfolio of Aryan Patel, a Full Stack Developer and Data Analyst from India specializing in React, Next.js, Node.js, and building scalable web applications." />
-<meta property="og:image" content="https://aryan-patel-106.vercel.app/aryan-img.jpeg" />
+<meta property="og:title" content="Aryan Patel | Full Stack Developer" />
+<meta property="og:description" content="Portfolio of Aryan Patel, a Full Stack Developer from India specializing in React, Next.js, Node.js, and building scalable web applications." />
+<meta property="og:image" content="https://aryan-patel-106.vercel.app/aryan.jpeg" />
 <meta property="og:site_name" content="Aryan Patel Portfolio" />
 <meta property="og:locale" content="en_IN" />
 
@@ -39,9 +39,9 @@
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://aryan-patel-106.vercel.app/" />
-<meta property="twitter:title" content="Aryan Patel | Full Stack Developer & Data Analyst" />
-<meta property="twitter:description" content="Portfolio of Aryan Patel, a Full Stack Developer and Data Analyst from India specializing in React, Next.js, Node.js, and building scalable web applications." />
-<meta property="twitter:image" content="https://aryan-patel-106.vercel.app/aryan-img.jpeg" />
+<meta property="twitter:title" content="Aryan Patel | Full Stack Developer" />
+<meta property="twitter:description" content="Portfolio of Aryan Patel, a Full Stack Developer from India specializing in React, Next.js, Node.js, and building scalable web applications." />
+<meta property="twitter:image" content="https://aryan-patel-106.vercel.app/aryan.jpeg" />
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Geist:wght@600;800&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=block" rel="stylesheet"/>
@@ -111,7 +111,7 @@
                       "base": "8px",
                       "container-max": "1280px",
                       "gutter": "24px",
-                      "section-padding": "120px",
+                      "section-padding": "48px",
                       "card-gap": "32px",
                       "sm": "12px",
                       "xl": "80px",
@@ -151,6 +151,7 @@
         .gradient-text {
             background: linear-gradient(135deg, #3525cd 0%, #8a4cfc 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         .gradient-button {
@@ -183,6 +184,19 @@
         .hide-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
+        }
+
+        /* Grid Background Pattern */
+        body {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px), 
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+        }
+        .dark body {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
         }
 
         /* Hero Animation Styles */
@@ -224,6 +238,222 @@
             95% { transform: translateY(50px) rotate(var(--r, 0deg)) scale(0.8); opacity: 0; }
             100% { transform: translateY(50px) rotate(var(--r, 0deg)) scale(0.8); opacity: 0; }
         }
+        
+        @keyframes gradient-xy {
+            0%, 100% {
+                background-size: 400% 400%;
+                background-position: left center;
+            }
+            50% {
+                background-size: 200% 200%;
+                background-position: right center;
+            }
+        }
+        .animate-gradient-xy {
+            animation: gradient-xy 6s ease infinite;
+        }
+
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee-left {
+            animation: marquee-left 20s linear infinite;
+        }
+        .animate-marquee-right {
+            animation: marquee-right 20s linear infinite;
+        }
+
+        /* Hero 3D Buttons */
+        .hero-btn-3d {
+            --color1: #6d28d9;
+            --color2: #4c1d95;
+            position: relative;
+            padding: 1.1em 2em;
+            background: linear-gradient(var(--color1), var(--color2));
+            border: none;
+            outline: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #fff;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.25);
+            cursor: pointer;
+            transform: rotateX(70deg) rotateZ(30deg);
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            text-decoration: none;
+            perspective: 800px;
+            border-radius: 6px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+        .hero-btn-3d::before {
+            content: "";
+            width: 100%;
+            height: 12px;
+            background-color: var(--color2);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: rotateX(90deg);
+            transform-origin: bottom;
+            border-radius: 0 0 6px 6px;
+        }
+        .hero-btn-3d::after {
+            content: "";
+            width: 12px;
+            height: 100%;
+            background-color: var(--color1);
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotateY(-90deg);
+            transform-origin: right;
+            border-radius: 0 6px 6px 0;
+        }
+        .hero-btn-3d:hover {
+            transform: rotateX(30deg) rotateZ(0deg);
+        }
+
+        .hero-btn-3d-ghost {
+            --color1: rgba(109,40,217,0.12);
+            --color2: rgba(76,29,149,0.18);
+            position: relative;
+            padding: 1.1em 2em;
+            background: linear-gradient(var(--color1), var(--color2));
+            border: 1.5px solid rgba(109,40,217,0.3);
+            outline: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #6d28d9;
+            cursor: pointer;
+            transform: rotateX(70deg) rotateZ(30deg);
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            text-decoration: none;
+            perspective: 800px;
+            border-radius: 6px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+        }
+        .dark .hero-btn-3d-ghost {
+            --color1: rgba(195,192,255,0.1);
+            --color2: rgba(195,192,255,0.15);
+            border-color: rgba(195,192,255,0.25);
+            color: #c3c0ff;
+        }
+        .hero-btn-3d-ghost::before {
+            content: "";
+            width: 100%;
+            height: 10px;
+            background-color: rgba(76,29,149,0.12);
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: rotateX(90deg);
+            transform-origin: bottom;
+        }
+        .dark .hero-btn-3d-ghost::before {
+            background-color: rgba(195,192,255,0.1);
+        }
+        .hero-btn-3d-ghost::after {
+            content: "";
+            width: 10px;
+            height: 100%;
+            background-color: rgba(109,40,217,0.1);
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotateY(-90deg);
+            transform-origin: right;
+        }
+        .dark .hero-btn-3d-ghost::after {
+            background-color: rgba(195,192,255,0.08);
+        }
+        .hero-btn-3d-ghost:hover {
+            transform: rotateX(30deg) rotateZ(0deg);
+        }
+
+        /* Animated Resume Button (Navbar) */
+        .resume-btn-animated {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            position: relative;
+            padding: 0 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+            border: 0;
+            box-shadow: #4c1d95 0px 5px 0px 0px;
+            background-color: #6d28d9;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 31ms cubic-bezier(.5, .7, .4, 1);
+            text-decoration: none;
+        }
+
+        .resume-btn-animated:before {
+            content: attr(alt);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            inset: 0;
+            font-size: 13px;
+            font-weight: bold;
+            color: white;
+            letter-spacing: 2px;
+            opacity: 1;
+        }
+
+        .resume-btn-animated:active {
+            box-shadow: none;
+            transform: translateY(5px);
+            transition: 35ms cubic-bezier(.5, .7, .4, 1);
+        }
+
+        .resume-btn-animated:hover:before {
+            transition: all .0s;
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .resume-btn-animated i {
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-style: normal;
+            transition: all 2s ease;
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        .resume-btn-animated:hover i {
+            transition: all .2s ease;
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .resume-btn-animated:hover i:nth-child(1) { transition-delay: 0.045s; }
+        .resume-btn-animated:hover i:nth-child(2) { transition-delay: calc(0.045s * 2); }
+        .resume-btn-animated:hover i:nth-child(3) { transition-delay: calc(0.045s * 3); }
+        .resume-btn-animated:hover i:nth-child(4) { transition-delay: calc(0.045s * 4); }
+        .resume-btn-animated:hover i:nth-child(5) { transition-delay: calc(0.045s * 5); }
+        .resume-btn-animated:hover i:nth-child(6) { transition-delay: calc(0.045s * 6); }
     </style>
 <script type="application/ld+json">
 [
@@ -331,31 +561,242 @@
 <div style="position: fixed; top: 0; left: 0; z-index: 50; pointer-events: none; width: 100%; height: 100%;">
     <canvas id="fluid" style="width: 100%; height: 100%; display: block;"></canvas>
 </div>
-<!-- Top Navigation Bar -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-black/5 dark:border-white/5 shadow-sm h-20 transition-colors duration-300">
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#0a0a0a]/80 backdrop-blur-xl border-b border-black/5 dark:border-white/5 shadow-sm h-20 transition-colors duration-300">
 <div class="flex justify-between items-center px-gutter max-w-container-max mx-auto h-full">
 <a href="#home" class="flex items-center no-underline border-none outline-none">
     <img src="aryan-logo.png" alt="Aryan Patel" class="h-10 w-auto brightness-0 dark:invert transition-all duration-300" />
 </a>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-body-md" href="#home">Home</a>
-<a class="text-on-surface-variant dark:text-gray-400 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 font-medium font-body-md" href="#about">About</a>
-<a class="text-on-surface-variant dark:text-gray-400 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 font-medium font-body-md" href="#skills">Skills</a>
-<a class="text-on-surface-variant dark:text-gray-400 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 font-medium font-body-md" href="#projects">Projects</a>
-<a class="text-on-surface-variant dark:text-gray-400 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 font-medium font-body-md" href="#experience">Experience</a>
-<a class="text-on-surface-variant dark:text-gray-400 hover:text-primary dark:hover:text-primary-fixed transition-colors duration-300 font-medium font-body-md" href="#contact">Contact</a>
-</div>
 <div class="flex items-center gap-4">
-    <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-on-surface dark:text-white flex items-center justify-center" aria-label="Toggle Dark Mode">
+    <button class="theme-toggle-btn p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-on-surface dark:text-white flex items-center justify-center" aria-label="Toggle Dark Mode">
         <span class="material-symbols-outlined dark:hidden">dark_mode</span>
         <span class="material-symbols-outlined hidden dark:block">light_mode</span>
     </button>
-    <a href="ResumeFSD.pdf" target="_blank" class="gradient-button px-6 py-2 rounded-xl text-white font-medium text-body-md hidden sm:inline-flex items-center justify-center">
-        Resume
-    </a>
 </div>
 </div>
 </nav>
+
+<!-- Desktop Fixed Top Corners -->
+<div class="hidden md:flex fixed top-0 w-full z-50 justify-between items-start px-gutter pt-8 pointer-events-none">
+    <!-- Logo -->
+    <a href="#home" class="pointer-events-auto flex items-center no-underline border-none outline-none">
+        <img src="aryan-logo.png" alt="Aryan Patel" class="h-12 w-auto brightness-0 dark:invert transition-all duration-300 drop-shadow-md" />
+    </a>
+    
+    <!-- Right Actions -->
+    <div class="pointer-events-auto flex items-center gap-4">
+        <a href="ResumeFSD.pdf" target="_blank" class="resume-btn-animated" alt="Resume">
+            <i>R</i><i>e</i><i>s</i><i>u</i><i>m</i><i>e</i>
+        </a>
+        <button id="theme-toggle" class="p-2 bg-white/50 dark:bg-black/50 backdrop-blur-md border border-black/10 dark:border-white/10 rounded-full hover:bg-black/5 dark:hover:bg-white/20 transition-colors text-on-surface dark:text-white flex items-center justify-center shadow-lg" aria-label="Toggle Dark Mode">
+            <span class="material-symbols-outlined dark:hidden">dark_mode</span>
+            <span class="material-symbols-outlined hidden dark:block">light_mode</span>
+        </button>
+    </div>
+</div>
+
+<!-- Animated Side Navbar (Desktop Only) -->
+<nav id="side-nav" class="fixed right-0 top-1/2 -translate-y-1/2 z-[100] hidden md:flex flex-col items-end py-10 w-48 group">
+</nav>
+
+<style>
+/* Side Nav Styles */
+#side-nav {
+    gap: 8px;
+    cursor: pointer;
+}
+.side-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 16px;
+    padding-right: 24px;
+    outline: none !important;
+    border: none !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+.side-nav-item:focus, 
+.side-nav-item:active, 
+.side-nav-item:focus-visible, 
+.side-nav-item:focus-within {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    background: transparent !important;
+}
+.side-nav-item::after, .side-nav-item::before {
+    display: none !important;
+}
+.side-nav-line {
+    height: 1px;
+    width: 24px;
+    background-color: rgba(0,0,0,0.3);
+    transition: transform 0.15s ease-out, background-color 0.3s ease;
+    transform-origin: right center;
+    will-change: transform;
+}
+.dark .side-nav-line {
+    background-color: rgba(255,255,255,0.3);
+}
+.side-nav-text {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #131b2e;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    text-decoration: none !important;
+    outline: none !important;
+    border: none !important;
+}
+.side-nav-text:focus, .side-nav-text:active {
+    outline: none !important;
+    border: none !important;
+}
+.dark .side-nav-text {
+    color: #ffffff;
+}
+/* Hover Effects */
+#side-nav:hover .side-nav-text {
+    opacity: 0.4;
+    transform: translateX(0);
+}
+.side-nav-item:hover .side-nav-text {
+    opacity: 1 !important;
+}
+.side-nav-item:hover .side-nav-line {
+    background-color: #000; 
+}
+.dark .side-nav-item:hover .side-nav-line {
+    background-color: #fff;
+}
+
+/* Custom Scroll Reveal for Hero Card */
+.scroll-reveal-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none; /* prevent interaction when hidden */
+}
+.scroll-reveal-card.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const sideNav = document.getElementById('side-nav');
+    if (!sideNav) return;
+    
+    const navLinks = [
+        { name: "Home", href: "#home" },
+        { name: "About", href: "#about" },
+        { name: "Skills", href: "#skills" },
+        { name: "Projects", href: "#projects" },
+        { name: "Experience", href: "#experience" },
+        { name: "Contact", href: "#contact" }
+    ];
+
+    let itemsHTML = '';
+    const totalLines = 36;
+    const spacing = Math.floor(totalLines / navLinks.length);
+    
+    let linkIndex = 0;
+    for (let i = 0; i < totalLines; i++) {
+        if (i % spacing === Math.floor(spacing/2) && linkIndex < navLinks.length) {
+            const link = navLinks[linkIndex];
+            itemsHTML += `<a href="${link.href}" class="side-nav-item no-underline"><span class="side-nav-text">${link.name}</span><div class="side-nav-line"></div></a>`;
+            linkIndex++;
+        } else {
+            itemsHTML += `<div class="side-nav-item"><div class="side-nav-line"></div></div>`;
+        }
+    }
+    
+    sideNav.innerHTML = itemsHTML;
+    
+    // Wave effect optimized with requestAnimationFrame and CSS transforms
+    let isUpdating = false;
+    sideNav.addEventListener('mousemove', (e) => {
+        if(isUpdating) return;
+        isUpdating = true;
+        
+        requestAnimationFrame(() => {
+            const rect = sideNav.getBoundingClientRect();
+            const mouseY = e.clientY - rect.top;
+            
+            const items = sideNav.querySelectorAll('.side-nav-item');
+            items.forEach((item) => {
+                const itemRect = item.getBoundingClientRect();
+                const itemY = itemRect.top - rect.top + (itemRect.height / 2);
+                const distance = Math.abs(mouseY - itemY);
+                
+                const line = item.querySelector('.side-nav-line');
+                
+                const maxDist = 120;
+                if (distance < maxDist) {
+                    const factor = 1 - Math.pow(distance / maxDist, 2);
+                    
+                    // Scale line
+                    if (line) {
+                        const extraWidth = factor * 40; 
+                        const scale = (24 + extraWidth) / 24;
+                        line.style.transform = `scaleX(${scale})`;
+                    }
+                    
+                    // Magnetic Y shift
+                    const yShift = ((mouseY - itemY) / maxDist) * factor * 12;
+                    item.style.transform = `translateY(${yShift}px)`;
+                } else {
+                    if (line) line.style.transform = 'scaleX(1)';
+                    item.style.transform = 'translateY(0)';
+                }
+            });
+            isUpdating = false;
+        });
+    });
+    
+    sideNav.addEventListener('mouseleave', () => {
+        const items = sideNav.querySelectorAll('.side-nav-item');
+        items.forEach(item => {
+            const line = item.querySelector('.side-nav-line');
+            if(line) line.style.transform = 'scaleX(1)'; 
+            item.style.transform = 'translateY(0)';
+        });
+    });
+    
+    // Sync mobile theme toggle to main logic
+    const mobileThemeToggle = document.querySelector('.theme-toggle-btn');
+    if (mobileThemeToggle) {
+        mobileThemeToggle.addEventListener('click', () => {
+            const mainToggle = document.getElementById('theme-toggle');
+            if(mainToggle) mainToggle.click();
+        });
+    }
+
+    // Custom reveal for hero card on scroll
+    window.addEventListener('scroll', () => {
+        const revealCard = document.querySelector('.scroll-reveal-card');
+        if (revealCard) {
+            // Reveal after 150px of scroll
+            if (window.scrollY > 150) {
+                revealCard.classList.add('is-visible');
+            } else {
+                revealCard.classList.remove('is-visible');
+            }
+        }
+    });
+});
+</script>
 <!-- Hero Section -->
 <header class="relative min-h-screen flex items-center pt-20 px-gutter overflow-hidden" id="home">
     <!-- Background Animation -->
@@ -430,33 +871,64 @@
 
     <div class="relative z-10 max-w-container-max mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <!-- Content Column -->
-        <div class="flex flex-col items-start text-left">
-            <div data-aos="fade-down" data-aos-delay="100" class="flex items-center gap-3 bg-surface/50 dark:bg-black/30 backdrop-blur-md border border-black/10 dark:border-white/10 px-4 py-2 rounded-full mb-8 shadow-sm transition-colors duration-300">
-                <img src="https://ui-avatars.com/api/?name=Aryan+Patel&background=random" class="w-6 h-6 rounded-full" alt="Aryan Patel" />
-                <span class="font-label-caps text-xs text-on-surface dark:text-gray-300 font-medium tracking-widest uppercase">Open to Roles & Freelance • 2026</span>
+        <div class="flex flex-col items-start text-left relative">
+
+            <div data-aos="fade-down" data-aos-delay="100" class="font-mono text-sm text-primary dark:text-primary-fixed mb-6 flex items-center gap-4 tracking-widest uppercase font-bold">
+                <span class="w-12 h-[2px] bg-primary dark:bg-primary-fixed"></span>
+                <span>System Initialized</span>
             </div>
             
-            <h1 data-aos="fade-right" data-aos-delay="200" class="font-display-lg-mobile md:font-display-lg text-[80px] md:text-[140px] leading-[0.9] tracking-tighter font-extrabold text-on-surface dark:text-white mb-6">
-                Aryan<br/>Patel
+            <h1 data-aos="fade-right" data-aos-delay="200" class="relative z-10 text-[80px] md:text-[130px] lg:text-[150px] font-black leading-[0.8] tracking-tighter mb-8 uppercase cursor-default group">
+                <span class="block text-transparent [-webkit-text-stroke:2px_#131b2e] dark:[-webkit-text-stroke:2px_#fff] opacity-20 dark:opacity-60 transition-all duration-500 group-hover:translate-x-4">
+                    ARYAN
+                </span>
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary transition-all duration-500 group-hover:translate-x-2">
+                    PATEL<span class="text-on-surface dark:text-white"></span>
+                </span>
             </h1>
             
-            <div data-aos="fade-up" data-aos-delay="300" class="flex items-center flex-wrap gap-2 mb-6 text-xl md:text-2xl font-bold text-on-surface dark:text-white">
-                Full Stack Developer <span class="material-symbols-outlined text-blue-500 text-2xl">verified</span> <span class="text-gray-500 dark:text-gray-400 font-normal text-lg">@aryanpatel</span>
+            <div data-aos="fade-up" data-aos-delay="300" class="relative z-10 flex items-center gap-6 mb-12">
+                <div class="h-16 w-1.5 rounded-full bg-gradient-to-b from-primary to-secondary"></div>
+                <div>
+                    <h2 class="text-2xl md:text-4xl font-extrabold text-on-surface dark:text-white mb-2 tracking-tight">Full Stack Developer</h2>
+                    <div class="flex items-center gap-3">
+                        <span class="relative flex h-3 w-3">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                        </span>
+                        <p class="text-on-surface-variant dark:text-gray-400 font-mono text-sm tracking-widest uppercase font-semibold">Available for New Projects</p>
+                    </div>
+                </div>
             </div>
 
-            <p data-aos="fade-up" data-aos-delay="400" class="text-body-lg text-on-surface-variant dark:text-gray-400 max-w-lg leading-relaxed mb-10">
-                Full Stack Developer from India. I've spent time turning ideas into production apps — 
-                <span class="inline-flex items-center gap-1 bg-surface dark:bg-white/10 px-2 py-1 rounded text-sm mx-1 border border-black/5 dark:border-white/10"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-4 h-4" alt="React"/> React</span> and 
-                <span class="inline-flex items-center gap-1 bg-surface dark:bg-white/10 px-2 py-1 rounded text-sm mx-1 border border-black/5 dark:border-white/10"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-4 h-4 dark:invert" alt="Next.js"/> Next.js</span> on the frontend, 
-                <span class="inline-flex items-center gap-1 bg-surface dark:bg-white/10 px-2 py-1 rounded text-sm mx-1 border border-black/5 dark:border-white/10"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-4 h-4" alt="Node.js"/> Node.js</span> powering the backend. Clean code, fast APIs, and UIs that don't suck.
-            </p>
+            <div class="scroll-reveal-card relative z-10 max-w-xl mb-12 group cursor-default">
+                <!-- Animated Glowing Background -->
+                <div class="absolute -inset-0.5 bg-gradient-to-r from-primary via-[#8a4cfc] to-primary rounded-[2rem] blur-[12px] opacity-40 group-hover:opacity-80 transition duration-500 animate-gradient-xy"></div>
+                
+                <!-- Inner Card -->
+                <div class="relative bg-surface/90 dark:bg-[#0a0f1c]/90 backdrop-blur-2xl border border-black/5 dark:border-white/10 p-6 md:p-8 rounded-[2rem] shadow-2xl flex items-start gap-5 transform transition-transform duration-500 group-hover:-translate-y-2">
+                    <div class="hidden sm:flex mt-1">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-xl">bolt</span>
+                        </div>
+                    </div>
+                    <p class="text-lg md:text-[22px] text-on-surface-variant dark:text-gray-300 leading-[1.6] font-medium tracking-tight">
+                        I craft <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-extrabold">high-performance</span> digital experiences. Specializing in bridging the gap between exceptional design and robust backend architecture using 
+                        <span class="inline-block mt-2 sm:mt-0 sm:inline">
+                            <strong class="text-on-surface dark:text-white font-mono text-sm bg-black/5 dark:bg-white/10 px-2.5 py-1 rounded-lg border border-black/5 dark:border-white/10">React</strong>, 
+                            <strong class="text-on-surface dark:text-white font-mono text-sm bg-black/5 dark:bg-white/10 px-2.5 py-1 rounded-lg border border-black/5 dark:border-white/10">Next.js</strong>, and 
+                            <strong class="text-on-surface dark:text-white font-mono text-sm bg-black/5 dark:bg-white/10 px-2.5 py-1 rounded-lg border border-black/5 dark:border-white/10">Node.js</strong>.
+                        </span>
+                    </p>
+                </div>
+            </div>
             
-            <div data-aos="fade-up" data-aos-delay="500" class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                <a class="gradient-button px-8 py-4 rounded-xl text-white font-semibold text-center shadow-lg shadow-primary/20 flex items-center justify-center gap-2" href="#projects">
-                    <span class="material-symbols-outlined">work</span> View Projects
+            <div data-aos="fade-up" data-aos-delay="500" class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto relative z-10" style="perspective: 800px;">
+                <a class="hero-btn-3d" href="#projects">
+                    Explore Work <span class="material-symbols-outlined text-lg">east</span>
                 </a>
-                <a class="bg-surface dark:bg-white/5 border border-outline-variant dark:border-white/10 px-8 py-4 rounded-xl font-semibold text-center hover:bg-black/5 dark:hover:bg-white/10 transition-all text-on-surface dark:text-white flex items-center justify-center gap-2" href="#contact">
-                    <span class="material-symbols-outlined">mail</span> Contact Me
+                <a class="hero-btn-3d-ghost" href="#contact">
+                    <span class="w-2 h-2 rounded-full bg-[#6d28d9] dark:bg-[#c3c0ff]"></span> Let's Talk
                 </a>
             </div>
         </div>
@@ -465,36 +937,146 @@
     </div>
 </header>
 <!-- About Me Section -->
-<section class="py-section-padding px-gutter" id="about">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-<div class="md:col-span-7 lg:col-span-8 flex flex-col gap-6">
-<h2 data-aos="fade-up" class="font-headline-md text-headline-md text-on-surface dark:text-white">About Me</h2>
-<div data-aos="zoom-in" data-aos-delay="100" class="h-1 w-20 gradient-button rounded-full"></div>
-<p data-aos="fade-up" data-aos-delay="200" class="text-on-surface-variant dark:text-gray-300 leading-relaxed text-[22px] md:text-[26px]" style="font-family: 'Dancing Script', cursive; font-weight: 500;">
-    Hello! I’m Aryan Patel, a Full Stack Developer and Data Analyst. I hold a degree from Shri Ramswaroop Memorial University and specialize in building scalable web applications, robust backend architectures, and data-driven solutions.
-</p>
-<p data-aos="fade-up" data-aos-delay="300" class="text-on-surface-variant dark:text-gray-300 leading-relaxed text-[22px] md:text-[26px]" style="font-family: 'Dancing Script', cursive; font-weight: 500;">
-    My technical journey spans end-to-end web development, designing efficient database systems, and leveraging generative AI to streamline software workflows. Whether architecting backend systems with Node.js or analyzing data to solve complex functional problems, I am passionate about crafting clean, maintainable code and production-ready applications.
-</p>
+<section class="py-section-padding px-gutter relative" id="about">
+    <div class="max-w-[1200px] mx-auto">
+        <!-- Header -->
+        <div data-aos="fade-up" class="mb-16 text-center flex flex-col items-center">
+            <span class="font-label-caps text-xs text-secondary dark:text-primary-fixed tracking-[0.2em] uppercase font-bold">DISCOVER</span>
+            <h2 class="font-display-lg-mobile md:font-display-lg text-[48px] md:text-[64px] font-extrabold text-on-surface dark:text-white leading-none mt-2 mb-4 tracking-tight">
+                About Me
+            </h2>
+        </div>
 
-<h3 data-aos="fade-right" data-aos-delay="400" class="text-xl font-bold text-on-surface dark:text-white mt-2">What I Do</h3>
-<ul data-aos="fade-right" data-aos-delay="500" class="flex flex-col gap-3 text-body-lg text-on-surface-variant dark:text-gray-300 leading-relaxed list-disc pl-5">
-    <li><strong>Full Stack Web Development:</strong> Building modern, responsive web applications using JavaScript frameworks and full-stack architecture.</li>
-    <li><strong>Backend Systems & APIs:</strong> Designing robust REST APIs, micro-services, and scalable Node.js backend structures.</li>
-    <li><strong>Data Analytics:</strong> Extracting key trends, building data pipelines, and transforming raw data into actionable insights.</li>
-    <li><strong>Generative AI & Modern Tooling:</strong> Integrating advanced AI tools and modern workflows into standard development protocols.</li>
-</ul>
-</div>
-<div data-aos="zoom-in" data-aos-delay="300" class="md:col-span-5 lg:col-span-4 relative mt-8 md:mt-0 flex items-center justify-center">
-    <div class="relative w-full max-w-sm aspect-square overflow-hidden rounded-3xl shadow-2xl shadow-black/10 dark:shadow-black/50 border border-black/5 dark:border-white/10">
-        <img src="aryan-img.jpeg" alt="Aryan Patel" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105" />
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Image Card -->
+            <div data-aos="zoom-in" data-aos-delay="100" class="md:col-span-1 rounded-[2rem] overflow-hidden relative group aspect-[4/5] md:aspect-auto border border-black/5 dark:border-white/10 shadow-xl dark:shadow-black/50">
+                <img src="aryan.jpeg" alt="Aryan Patel" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div class="absolute bottom-6 left-6 right-6">
+                    <h3 class="text-white text-2xl font-bold font-headline-md tracking-tight mb-1">Aryan Patel</h3>
+                    <p class="text-white/80 text-sm font-medium tracking-wide">B.Tech CS @ SRMU</p>
+                </div>
+            </div>
+
+            <!-- Content Card -->
+            <div data-aos="fade-left" data-aos-delay="200" class="md:col-span-2 bg-surface/80 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-[2rem] p-8 md:p-12 shadow-sm flex flex-col justify-center transition-colors">
+                <div class="mb-2">
+                    <div class="inline-flex p-4 rounded-2xl bg-primary/10 text-primary dark:bg-primary-fixed/20 dark:text-primary-fixed mb-6 border border-primary/20">
+                        <span class="material-symbols-outlined text-3xl">psychology</span>
+                    </div>
+                    <h3 class="font-headline-md text-3xl md:text-4xl font-bold text-on-surface dark:text-white mb-6 leading-tight tracking-tight">
+                        Engineering Solutions <br/><span class="gradient-text">Through Code & Data.</span>
+                    </h3>
+                    <p class="text-on-surface-variant dark:text-gray-300 leading-relaxed text-[20px] md:text-[22px] mb-5 font-medium" style="font-family: 'Dancing Script', cursive;">
+                        Hello! I’m Aryan Patel, a Full Stack Developer and Data Analyst. I hold a degree from Shri Ramswaroop Memorial University and specialize in building scalable web applications, robust backend architectures, and data-driven solutions.
+                    </p>
+                    <p class="text-on-surface-variant dark:text-gray-300 leading-relaxed text-[20px] md:text-[22px] font-medium" style="font-family: 'Dancing Script', cursive;">
+                        Whether architecting backend systems with Node.js or analyzing data to solve complex functional problems, I am passionate about crafting clean, maintainable code and production-ready applications.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Focus Areas (4 small cards) -->
+            <div data-aos="fade-up" data-aos-delay="300" class="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-2">
+                <!-- Card 1 -->
+                <div class="bg-surface/80 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center mb-5 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">code</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-on-surface dark:text-white mb-2">Full Stack</h4>
+                    <p class="text-sm text-on-surface-variant dark:text-gray-400 font-medium leading-relaxed">Modern, responsive web apps using JS frameworks and end-to-end architecture.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-surface/80 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
+                    <div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-5 text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">dns</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-on-surface dark:text-white mb-2">Backend & APIs</h4>
+                    <p class="text-sm text-on-surface-variant dark:text-gray-400 font-medium leading-relaxed">Robust REST APIs, micro-services, and scalable Node.js backend structures.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-surface/80 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
+                    <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-5 text-green-600 dark:text-green-400 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">analytics</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-on-surface dark:text-white mb-2">Data Analytics</h4>
+                    <p class="text-sm text-on-surface-variant dark:text-gray-400 font-medium leading-relaxed">Extracting trends, building pipelines, and transforming raw data into insights.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="bg-surface/80 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-3xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all group">
+                    <div class="w-12 h-12 rounded-full bg-orange-500/10 flex items-center justify-center mb-5 text-orange-600 dark:text-orange-400 group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined">smart_toy</span>
+                    </div>
+                    <h4 class="font-bold text-lg text-on-surface dark:text-white mb-2">Generative AI</h4>
+                    <p class="text-sm text-on-surface-variant dark:text-gray-400 font-medium leading-relaxed">Integrating advanced AI tools and workflows into standard development protocols.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <!-- Decorative glow behind image -->
-    <div class="absolute -z-10 top-10 -right-10 w-[120%] h-[120%] bg-primary/10 dark:bg-primary/20 blur-[80px] rounded-full pointer-events-none"></div>
-</div>
-</div>
-</div>
+</section>
+
+<!-- Infinite Marquee Section -->
+<section class="py-8 overflow-hidden relative bg-transparent" id="marquee">
+   
+    
+    <!-- Top Band (Slanted Left) -->
+    <div class="relative w-[110%] -left-[5%] transform -rotate-3 bg-white dark:bg-[#0a0f1c] py-5 border-y-4 border-black dark:border-white shadow-2xl flex items-center overflow-hidden z-10">
+        <div class="flex items-center animate-marquee-left whitespace-nowrap w-max">
+            <!-- Copy 1 -->
+            <div class="flex items-center gap-16 px-8">
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">REACT</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">NEXT.JS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">JAVASCRIPT</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">TYPESCRIPT</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">NODE.JS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">TAILWIND</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">MONGODB</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">POSTGRESQL</span></div>
+            </div>
+            <!-- Copy 2 -->
+            <div class="flex items-center gap-16 px-8">
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">REACT</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">NEXT.JS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">JAVASCRIPT</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">TYPESCRIPT</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">NODE.JS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">TAILWIND</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">MONGODB</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">POSTGRESQL</span></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bottom Band (Slanted Right) -->
+    <div class="relative w-[110%] -left-[5%] transform rotate-3 bg-white dark:bg-[#0a0f1c] py-5 border-y-4 border-black dark:border-white shadow-2xl flex items-center overflow-hidden -mt-8 z-0">
+        <div class="flex items-center animate-marquee-right whitespace-nowrap w-max">
+            <!-- Copy 1 -->
+            <div class="flex items-center gap-16 px-8">
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-14 h-14 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">AWS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">DOCKER</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">PRISMA</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.worldvectorlogo.com/logos/vercel.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">VERCEL</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">EXPRESS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">PYTHON</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">C++</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">JAVA</span></div>
+            </div>
+            <!-- Copy 2 -->
+            <div class="flex items-center gap-16 px-8">
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" class="w-14 h-14 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">AWS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">DOCKER</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">PRISMA</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.worldvectorlogo.com/logos/vercel.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">VERCEL</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-10 h-10 dark:invert"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">EXPRESS</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">PYTHON</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">C++</span></div>
+                <div class="flex items-center gap-4"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="w-10 h-10"/><span class="font-black text-2xl uppercase tracking-widest text-black dark:text-white">JAVA</span></div>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- Skills Detailed Section -->
 <section class="py-section-padding px-gutter" id="skills">
@@ -691,144 +1273,410 @@
 </section>
 <!-- Projects Section -->
 <section class="py-section-padding px-gutter" id="projects">
+    <style>
+        .project-card-v2 {
+            position: relative;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        @media (min-width: 768px) {
+            .project-card-v2 {
+                grid-template-columns: 45% 55%;
+                min-height: 360px;
+            }
+            .project-card-v2.reverse {
+                grid-template-columns: 55% 45%;
+            }
+            .project-card-v2.reverse .project-img-wrapper {
+                order: 2;
+            }
+            .project-card-v2.reverse .project-content-area {
+                order: 1;
+            }
+        }
+        .dark .project-card-v2 {
+            background: rgba(18,18,18,0.9);
+            border-color: rgba(255,255,255,0.08);
+        }
+        .project-card-v2:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px -15px rgba(53,37,205,0.18), 0 0 0 1px rgba(53,37,205,0.08);
+        }
+        .dark .project-card-v2:hover {
+            box-shadow: 0 25px 60px -15px rgba(138,76,252,0.22), 0 0 0 1px rgba(138,76,252,0.15);
+        }
+        .project-img-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            min-height: 220px;
+        }
+        .dark .project-img-wrapper {
+            background: #1a1a1a;
+        }
+        .project-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-height: 280px;
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .project-card-v2:hover .project-img-wrapper img {
+            transform: scale(1.05);
+        }
+        .project-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(53,37,205,0.05) 0%, rgba(138,76,252,0.08) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .project-card-v2:hover .project-img-overlay {
+            opacity: 1;
+        }
+        .project-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(53,37,205,0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(53,37,205,0.15);
+            color: #3525cd;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: -0.02em;
+            z-index: 2;
+        }
+        .dark .project-number {
+            background: rgba(195,192,255,0.1);
+            border-color: rgba(195,192,255,0.2);
+            color: #c3c0ff;
+        }
+        .project-tech-float {
+            position: absolute;
+            bottom: 0.75rem;
+            left: 0.75rem;
+            right: 0.75rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .project-card-v2:hover .project-tech-float {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tech-glass-pill {
+            padding: 0.25rem 0.6rem;
+            border-radius: 2rem;
+            background: rgba(53,37,205,0.08);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(53,37,205,0.12);
+            color: #3525cd;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .dark .tech-glass-pill {
+            background: rgba(195,192,255,0.1);
+            border-color: rgba(195,192,255,0.15);
+            color: #c3c0ff;
+        }
+        .tech-glass-pill img {
+            width: 10px !important;
+            height: 10px !important;
+            max-width: 10px !important;
+            max-height: 10px !important;
+            flex-shrink: 0;
+        }
+        .project-content-area {
+            padding: 1.75rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .project-meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        .project-year-badge {
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #712ae2;
+            background: rgba(113,42,226,0.08);
+            padding: 0.3rem 0.75rem;
+            border-radius: 2rem;
+        }
+        .dark .project-year-badge {
+            color: #c3c0ff;
+            background: rgba(195,192,255,0.1);
+        }
+        .project-category {
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #9ca3af;
+        }
+        .project-title-v2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .project-desc-v2 {
+            font-size: 0.88rem;
+            line-height: 1.65;
+            color: #6b7280;
+            margin-bottom: 1.25rem;
+        }
+        .dark .project-desc-v2 {
+            color: #9ca3af;
+        }
+        .project-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            margin-top: auto;
+        }
+        .dark .project-actions {
+            border-top-color: rgba(255,255,255,0.08);
+        }
+        .action-btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.25rem;
+            border-radius: 2rem;
+            background: linear-gradient(135deg, #3525cd, #8a4cfc);
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .action-btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(53,37,205,0.35);
+        }
+        .action-btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.55rem 1rem;
+            border-radius: 2rem;
+            background: transparent;
+            border: 1px solid rgba(0,0,0,0.1);
+            color: #374151;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .dark .action-btn-ghost {
+            border-color: rgba(255,255,255,0.12);
+            color: #e5e7eb;
+        }
+        .action-btn-ghost:hover {
+            background: rgba(0,0,0,0.04);
+        }
+        .dark .action-btn-ghost:hover {
+            background: rgba(255,255,255,0.06);
+        }
+        .live-indicator {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(34,197,94,0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(34,197,94,0.2);
+            padding: 0.25rem 0.65rem;
+            border-radius: 2rem;
+            z-index: 2;
+        }
+        .live-dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #22c55e;
+            animation: livePulse 2s ease-in-out infinite;
+        }
+        .live-text {
+            font-size: 0.58rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #16a34a;
+        }
+        .dark .live-indicator {
+            background: rgba(34,197,94,0.08);
+            border-color: rgba(34,197,94,0.15);
+        }
+        .dark .live-text {
+            color: #4ade80;
+        }
+        @keyframes livePulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            50% { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+        }
+    </style>
+
     <div class="max-w-[1000px] mx-auto">
         <!-- Header -->
-        <div data-aos="fade-up" class="mb-32 md:mb-40 text-left">
+        <div data-aos="fade-up" class="mb-16 md:mb-20 text-left">
             <span class="font-label-caps text-xs text-secondary dark:text-primary-fixed tracking-[0.2em] uppercase font-bold">WORK</span>
             <h2 class="font-display-lg-mobile md:font-display-lg text-[48px] md:text-[64px] font-extrabold text-on-surface dark:text-white leading-none mt-2 mb-4 tracking-tight">
                 Projects
             </h2>
         </div>
 
-        <div class="projects-wrapper w-full px-4 md:px-0">
-            <div id="projects-pin-container" class="relative w-full max-w-[1000px] mx-auto h-[80vh] md:h-[70vh]">
+        <!-- Project Cards -->
+        <div class="flex flex-col gap-10 md:gap-12">
+
             <!-- Project 1 -->
-            <div class="project-card absolute top-0 left-0 w-full z-[30] flex flex-col lg:flex-row gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black h-full overflow-hidden">
-                <!-- Image Side -->
-                <div class="w-full lg:w-[55%] relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group aspect-video">
-                    <img alt="Aditya Almirah Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="aditya-web.png"/>
-                    <div class="absolute top-4 right-4 bg-primary/10 dark:bg-primary/20 backdrop-blur-md border border-primary/20 text-primary dark:text-primary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 bg-primary dark:bg-primary-fixed rounded-full"></span> Live
+            <div data-aos="fade-up" class="project-card-v2">
+                <div class="project-img-wrapper">
+                    <img alt="Aditya Almirah Website" src="aditya-web.png" />
+                    <div class="project-img-overlay"></div>
+                    <div class="project-number">01</div>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        <span class="live-text">Live</span>
+                    </div>
+                    <div class="project-tech-float">
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> HTML</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /> CSS</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> JS</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" /> Node</span>
                     </div>
                 </div>
-                <!-- Content Side -->
-                <div data-aos="fade-left" class="w-full lg:w-[45%] flex flex-col justify-center">
-                    <div class="text-xs font-bold text-gray-400 tracking-[0.1em] uppercase mb-3">2026 • FULL-STACK • E-Commerce</div>
-                    <h3 class="font-headline-md text-[32px] font-extrabold mb-3 text-on-surface dark:text-white leading-tight">Aditya Almirah Website</h3>
-                    <p class="text-on-surface-variant dark:text-gray-400 font-body-md mb-6 leading-relaxed">
-                        A high-performance business website with product catalogs and custom inquiry management.
+                <div class="project-content-area">
+                    <div class="project-meta-row">
+                        <span class="project-year-badge">2026</span>
+                        <span class="project-category">Full-Stack • E-Commerce</span>
+                    </div>
+                    <h3 class="project-title-v2 text-on-surface dark:text-white">Aditya Almirah Website</h3>
+                    <p class="project-desc-v2">
+                        A high-performance business website with product catalogs and custom inquiry management. Optimizing business reach through seamless product exploration.
                     </p>
-                    <div class="border-l-[3px] border-black/10 dark:border-white/20 pl-4 py-1 mb-8 italic text-sm text-gray-500 dark:text-gray-400">
-                        Optimizing business reach through seamless product exploration.
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-3 h-3" /> HTML
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-3 h-3" /> CSS
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-3 h-3" /> JavaScript
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-3 h-3" /> Node.js
-                        </span>
-                    </div>
-
-                    <div class="flex items-center gap-4 mt-auto">
-                        <button class="px-6 py-2.5 rounded-full border border-secondary text-secondary dark:text-primary-fixed dark:border-primary-fixed text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-secondary/5 transition-colors">
-                            CASE STUDY <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                        </button>
-                        <a href="https://www.adityaalmirah.com/" target="_blank" class="px-6 py-2.5 rounded-full border border-black/10 dark:border-white/20 text-on-surface dark:text-white text-xs font-bold tracking-wider flex items-center gap-2 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                            <span class="material-symbols-outlined text-[16px]">language</span> Live
+                    <div class="project-actions">
+                        <a href="https://www.adityaalmirah.com/" target="_blank" class="action-btn-primary">
+                            Visit Site <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                         </a>
+                        <button class="action-btn-ghost">
+                            Case Study <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2 (Reversed) -->
-            <div class="project-card absolute top-0 left-0 w-full z-[20] flex flex-col lg:flex-row-reverse gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black h-full overflow-hidden">
-                <!-- Image Side -->
-                <div class="w-full lg:w-[55%] relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group aspect-video">
-                    <img alt="HAPL Controls Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="hapl-web.png"/>
-                    <div class="absolute top-4 right-4 bg-primary/10 dark:bg-primary/20 backdrop-blur-md border border-primary/20 text-primary dark:text-primary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 bg-primary dark:bg-primary-fixed rounded-full"></span> Live
+            <div data-aos="fade-up" data-aos-delay="100" class="project-card-v2 reverse">
+                <div class="project-img-wrapper">
+                    <img alt="HAPL Controls Website" src="hapl-web.png" />
+                    <div class="project-img-overlay"></div>
+                    <div class="project-number">02</div>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        <span class="live-text">Live</span>
+                    </div>
+                    <div class="project-tech-float">
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> JS</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" /> Mongo</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" /> Node</span>
                     </div>
                 </div>
-                <!-- Content Side -->
-                <div data-aos="fade-right" class="w-full lg:w-[45%] flex flex-col justify-center">
-                    <div class="text-xs font-bold text-gray-400 tracking-[0.1em] uppercase mb-3">2025 • AUTOMATION</div>
-                    <h3 class="font-headline-md text-[32px] font-extrabold mb-3 text-on-surface dark:text-white leading-tight">HAPL Controls Website</h3>
-                    <p class="text-on-surface-variant dark:text-gray-400 font-body-md mb-6 leading-relaxed">
-                        Industrial automation website featuring real-time data monitoring and control interfaces.
+                <div class="project-content-area">
+                    <div class="project-meta-row">
+                        <span class="project-year-badge">2025</span>
+                        <span class="project-category">Automation • IoT</span>
+                    </div>
+                    <h3 class="project-title-v2 text-on-surface dark:text-white">HAPL Controls Website</h3>
+                    <p class="project-desc-v2">
+                        Industrial automation website featuring real-time data monitoring and control interfaces. Bridging hardware control with modern web interfaces.
                     </p>
-                    <div class="border-l-[3px] border-black/10 dark:border-white/20 pl-4 py-1 mb-8 italic text-sm text-gray-500 dark:text-gray-400">
-                        Bridging hardware control with modern web interfaces.
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-3 h-3" /> JavaScript
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" class="w-3 h-3" /> MongoDB
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                           <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-3 h-3" /> Node.js
-                        </span>
-                    </div>
-
-                    <div class="flex items-center gap-4 mt-auto">
-                        <button class="px-6 py-2.5 rounded-full border border-secondary text-secondary dark:text-primary-fixed dark:border-primary-fixed text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-secondary/5 transition-colors">
-                            CASE STUDY <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-                        </button>
-                        <a href="https://www.haplcontrols.com/" target="_blank" class="px-6 py-2.5 rounded-full border border-black/10 dark:border-white/20 text-on-surface dark:text-white text-xs font-bold tracking-wider flex items-center gap-2 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                            <span class="material-symbols-outlined text-[16px]">language</span> Live
+                    <div class="project-actions">
+                        <a href="https://www.haplcontrols.com/" target="_blank" class="action-btn-primary">
+                            Visit Site <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                         </a>
+                        <button class="action-btn-ghost">
+                            Case Study <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </button>
                     </div>
                 </div>
             </div>
 
             <!-- Project 3 -->
-            <div class="project-card absolute top-0 left-0 w-full z-[10] flex flex-col lg:flex-row gap-8 p-6 lg:p-10 border border-black/5 dark:border-white/10 rounded-[2rem] bg-surface dark:bg-[#121212] shadow-2xl dark:shadow-black h-full overflow-hidden">
-                <!-- Image Side -->
-                <div class="w-full lg:w-[55%] relative rounded-2xl overflow-hidden border border-black/5 dark:border-white/10 group aspect-video">
-                    <img alt="Personal Portfolio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="aryan-web.png"/>
-                    <div class="absolute top-4 right-4 bg-primary/10 dark:bg-primary/20 backdrop-blur-md border border-primary/20 text-primary dark:text-primary-fixed px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-2">
-                        <span class="w-1.5 h-1.5 bg-primary dark:bg-primary-fixed rounded-full"></span> Live
+            <div data-aos="fade-up" data-aos-delay="200" class="project-card-v2">
+                <div class="project-img-wrapper">
+                    <img alt="Personal Portfolio" src="aryan-web.png" />
+                    <div class="project-img-overlay"></div>
+                    <div class="project-number">03</div>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        <span class="live-text">Live</span>
+                    </div>
+                    <div class="project-tech-float">
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" /> HTML</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" /> CSS</span>
+                        <span class="tech-glass-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" /> JS</span>
                     </div>
                 </div>
-                <!-- Content Side -->
-                <div data-aos="fade-left" class="w-full lg:w-[45%] flex flex-col justify-center">
-                    <div class="text-xs font-bold text-gray-400 tracking-[0.1em] uppercase mb-3">2026 • DESIGN • FRONTEND</div>
-                    <h3 class="font-headline-md text-[32px] font-extrabold mb-3 text-on-surface dark:text-white leading-tight">Portfolio Website</h3>
-                    <p class="text-on-surface-variant dark:text-gray-400 font-body-md mb-6 leading-relaxed">
-                        A high-end personal portfolio featuring smooth animations and glassmorphism design.
+                <div class="project-content-area">
+                    <div class="project-meta-row">
+                        <span class="project-year-badge">2026</span>
+                        <span class="project-category">Design • Frontend</span>
+                    </div>
+                    <h3 class="project-title-v2 text-on-surface dark:text-white">Portfolio Website</h3>
+                    <p class="project-desc-v2">
+                        A high-end personal portfolio featuring smooth animations and glassmorphism design. A portfolio is a product — scope and polish matter as much as any user-facing app.
                     </p>
-                    <div class="border-l-[3px] border-black/10 dark:border-white/20 pl-4 py-1 mb-8 italic text-sm text-gray-500 dark:text-gray-400">
-                        A portfolio is a product — scope and polish matter as much as any user-facing app.
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-2 mb-8">
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-3 h-3" /> HTML
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-3 h-3" /> CSS
-                        </span>
-                        <span class="flex items-center gap-2 border border-black/10 dark:border-white/20 px-3 py-1.5 rounded-lg text-xs font-medium text-on-surface dark:text-gray-300">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-3 h-3" /> JavaScript
-                        </span>
-                    </div>
-
-                    <div class="flex items-center gap-4 mt-auto">
-                        <button class="px-6 py-2.5 rounded-full border border-secondary text-secondary dark:text-primary-fixed dark:border-primary-fixed text-xs font-bold uppercase tracking-wider flex items-center gap-2 hover:bg-secondary/5 transition-colors">
-                            CASE STUDY <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    <div class="project-actions">
+                        <button class="action-btn-primary">
+                            Visit Site <span class="material-symbols-outlined text-[14px]">arrow_outward</span>
                         </button>
-                        <button class="px-6 py-2.5 rounded-full border border-black/10 dark:border-white/20 text-on-surface dark:text-white text-xs font-bold tracking-wider flex items-center gap-2 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-                            <span class="material-symbols-outlined text-[16px]">language</span> Live
+                        <button class="action-btn-ghost">
+                            Case Study <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
                         </button>
                     </div>
                 </div>
@@ -837,92 +1685,127 @@
         </div>
     </div>
 </section>
-<!-- Experience Section -->
-<section class="py-section-padding px-gutter bg-surface-container-low dark:bg-[#0a0a0a]" id="experience">
-    <div class="max-w-[1000px] mx-auto">
+<!-- Experience Section (Animated Journey Path) -->
+<section class="py-section-padding px-gutter bg-transparent relative overflow-hidden" id="experience">
+    <!-- Animated Path CSS -->
+    <style>
+        @keyframes flowDown {
+            0% { top: -20%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 110%; opacity: 0; }
+        }
+        .energy-beam {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(to bottom, transparent, #6366f1, #10b981, transparent);
+            animation: flowDown 4s linear infinite;
+        }
+    </style>
+
+    <div class="max-w-[1200px] mx-auto relative pb-10">
+        <!-- Header -->
         <div data-aos="fade-up" class="text-center mb-24">
-            <span class="font-label-caps text-xs text-[#6366f1] tracking-[0.3em] uppercase font-bold block mb-4">CAREER PATH</span>
-            <h2 class="font-display-lg-mobile md:text-[56px] text-[40px] font-extrabold text-on-surface dark:text-white leading-tight mb-4 tracking-tight">Professional Journey</h2>
+            <span class="font-label-caps text-xs text-secondary dark:text-primary-fixed tracking-[0.3em] uppercase font-bold block mb-3">CAREER PATH</span>
+            <h2 class="font-display-lg-mobile md:text-[56px] text-[40px] font-extrabold text-on-surface dark:text-white leading-tight tracking-tight">Professional Journey</h2>
+            <p class="text-on-surface-variant dark:text-gray-400 mt-4 text-lg">My path of building scalable applications and solving problems.</p>
         </div>
         
-        <div class="relative max-w-4xl mx-auto">
-            <!-- Timeline Line -->
-            <div data-aos="fade-down" data-aos-duration="1500" class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-black/10 dark:via-white/10 to-transparent -translate-x-1/2 hidden md:block"></div>
-            
-            <!-- Experience Item 1 -->
-            <div class="relative mb-16 md:mb-32 group cursor-default">
-                <div class="md:flex items-center">
-                    <div data-aos="fade-right" class="md:w-1/2 md:pr-16 md:text-right mb-8 md:mb-0 transform transition-all duration-500 group-hover:-translate-y-2">
-                        <div class="glass-card p-8 rounded-3xl inline-block w-full shadow-lg hover:shadow-2xl hover:shadow-[#6366f1]/10 border border-black/5 dark:border-white/10 hover:border-[#6366f1]/30 dark:hover:border-[#6366f1]/30 transition-all duration-500 bg-white/50 dark:bg-white/5 backdrop-blur-xl relative overflow-hidden">
-                            <!-- Subtle gradient glow -->
-                            <div class="absolute top-0 right-0 w-40 h-40 bg-[#6366f1]/5 rounded-full blur-[50px] -z-10 group-hover:bg-[#6366f1]/15 transition-colors duration-500"></div>
-                            
-                            <span class="inline-block px-4 py-1.5 rounded-full bg-[#6366f1]/10 text-[#6366f1] dark:text-[#a5b4fc] text-xs font-bold tracking-widest mb-5">JUNE 2026 - PRESENT</span>
-                            <h3 class="font-bold text-2xl mb-2 text-on-surface dark:text-white leading-snug">Full Stack Developer</h3>
-                            <h4 class="text-lg text-on-surface-variant dark:text-gray-400 font-medium mb-4">Honesty Automation Pvt Ltd</h4>
-                            <p class="text-on-surface-variant dark:text-gray-400 text-sm leading-relaxed mb-6">Focusing on website maintenance, UI improvements, and core feature development.</p>
-                            
-                            <ul class="space-y-3 text-sm text-on-surface-variant dark:text-gray-400 md:flex md:flex-col md:items-end">
-                                <li class="flex items-start md:flex-row-reverse gap-3 group/item">
-                                    <span class="material-symbols-outlined text-[18px] text-[#6366f1] mt-0.5 group-hover/item:scale-125 transition-transform duration-300">check_circle</span> 
-                                    <span>Optimized website performance and maintained legacy codebases.</span>
-                                </li>
-                                <li class="flex items-start md:flex-row-reverse gap-3 group/item">
-                                    <span class="material-symbols-outlined text-[18px] text-[#6366f1] mt-0.5 group-hover/item:scale-125 transition-transform duration-300">check_circle</span> 
-                                    <span>Improved UI responsiveness across multiple screen dimensions.</span>
-                                </li>
-                            </ul>
+        <div class="relative w-full">
+            <!-- The Journey Track (Central Line) -->
+            <div class="absolute left-[30px] md:left-1/2 top-0 bottom-0 w-[6px] bg-black/5 dark:bg-white/5 md:-translate-x-1/2 rounded-full overflow-hidden shadow-inner">
+                <!-- Moving Energy Beam -->
+                <div class="energy-beam"></div>
+            </div>
+
+            <!-- Journey Step 1 (Current Role) -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between mb-24 group">
+                <!-- Left Side: Card (Desktop) / Full Card (Mobile) -->
+                <div class="w-full md:w-[45%] md:text-right pl-[70px] md:pl-0 md:pr-16" data-aos="fade-right">
+                    <div class="bg-surface/80 dark:bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/10 shadow-xl group-hover:border-[#6366f1]/50 group-hover:shadow-[0_10px_30px_rgba(99,102,241,0.2)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden text-left md:text-right">
+                        <!-- Glow blob -->
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-[#6366f1]/20 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <!-- Mobile Date/Title (Hidden on Desktop) -->
+                        <div class="md:hidden mb-4">
+                            <h3 class="text-2xl font-extrabold text-[#6366f1]">2026 - Present</h3>
+                            <p class="text-lg font-bold text-on-surface dark:text-white">Honesty Automation Pvt Ltd</p>
+                        </div>
+
+                        <h4 class="text-2xl md:text-3xl font-extrabold text-on-surface dark:text-white mb-2">Full Stack Developer</h4>
+                        <p class="text-on-surface-variant dark:text-gray-400 mb-6 leading-relaxed">Maintaining legacy systems, building core features, and boosting frontend UI performance.</p>
+                        
+                        <div class="flex flex-wrap gap-2 md:justify-end">
+                            <span class="px-3 py-1 text-xs font-bold bg-[#6366f1]/10 text-[#6366f1] rounded-lg">Next.js</span>
+                            <span class="px-3 py-1 text-xs font-bold bg-[#6366f1]/10 text-[#6366f1] rounded-lg">Node.js</span>
+                            <span class="px-3 py-1 text-xs font-bold bg-[#6366f1]/10 text-[#6366f1] rounded-lg">TailwindCSS</span>
                         </div>
                     </div>
-                    
-                    <!-- Timeline Dot -->
-                    <div class="absolute left-0 md:left-1/2 top-10 md:top-1/2 w-10 h-10 bg-white dark:bg-[#0a0a0a] border-4 border-black/5 dark:border-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center transition-all duration-500 group-hover:border-[#6366f1] group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.4)]">
-                        <div class="w-3 h-3 bg-black/20 dark:bg-white/20 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:bg-[#6366f1]"></div>
+                </div>
+
+                <!-- Center Node -->
+                <div class="absolute left-[33px] md:left-1/2 w-6 h-6 bg-[#6366f1] rounded-full md:-translate-x-1/2 top-10 md:top-1/2 md:-translate-y-1/2 z-10 border-[5px] border-white dark:border-[#121212] shadow-[0_0_20px_#6366f1] group-hover:scale-[1.5] transition-transform duration-500">
+                    <div class="absolute inset-0 bg-[#6366f1] rounded-full animate-ping opacity-75 scale-150"></div>
+                </div>
+
+                <!-- Right Side: Date/Title (Desktop only) -->
+                <div class="hidden md:block w-full md:w-[45%] pl-16 text-left" data-aos="fade-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#6366f1]/10 border border-[#6366f1]/20 mb-3">
+                        <span class="w-2 h-2 rounded-full bg-[#6366f1] animate-pulse"></span>
+                        <span class="text-[#6366f1] font-bold text-xs tracking-widest uppercase">CURRENT ROLE</span>
                     </div>
-                    
-                    <div class="md:w-1/2 md:pl-16">
-                        <!-- Empty right side -->
-                    </div>
+                    <h3 class="text-[40px] font-black text-on-surface dark:text-white leading-none mb-2">2026 - Present</h3>
+                    <p class="text-2xl font-bold text-on-surface-variant dark:text-gray-400">Honesty Automation Pvt Ltd</p>
                 </div>
             </div>
 
-            <!-- Experience Item 2 -->
-            <div class="relative mb-16 md:mb-32 group cursor-default">
-                <div class="md:flex items-center">
-                    <div class="md:w-1/2 md:pr-16 order-2 md:order-1">
-                        <!-- Empty left side -->
-                    </div>
-                    
-                    <!-- Timeline Dot -->
-                    <div class="absolute left-0 md:left-1/2 top-10 md:top-1/2 w-10 h-10 bg-white dark:bg-[#0a0a0a] border-4 border-black/5 dark:border-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 z-10 hidden md:flex items-center justify-center transition-all duration-500 group-hover:border-emerald-500 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-                        <div class="w-3 h-3 bg-black/20 dark:bg-white/20 rounded-full transition-all duration-500 group-hover:scale-150 group-hover:bg-emerald-500"></div>
-                    </div>
-                    
-                    <div data-aos="fade-left" class="md:w-1/2 md:pl-16 order-1 md:order-2 mb-8 md:mb-0 transform transition-all duration-500 group-hover:-translate-y-2">
-                        <div class="glass-card p-8 rounded-3xl inline-block w-full shadow-lg hover:shadow-2xl hover:shadow-emerald-500/10 border border-black/5 dark:border-white/10 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-500 bg-white/50 dark:bg-white/5 backdrop-blur-xl relative overflow-hidden">
-                            <!-- Subtle gradient glow -->
-                            <div class="absolute top-0 left-0 w-40 h-40 bg-emerald-500/5 rounded-full blur-[50px] -z-10 group-hover:bg-emerald-500/15 transition-colors duration-500"></div>
-                            
-                            <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold tracking-widest mb-5">PREVIOUS ROLE</span>
-                            <h3 class="font-bold text-2xl mb-2 text-on-surface dark:text-white leading-snug">Web Developer</h3>
-                            <h4 class="text-lg text-on-surface-variant dark:text-gray-400 font-medium mb-4">Local Startups</h4>
-                            <p class="text-on-surface-variant dark:text-gray-400 text-sm leading-relaxed mb-6">Designed and deployed user-centric web applications for local startups.</p>
-                            
-                            <ul class="space-y-3 text-sm text-on-surface-variant dark:text-gray-400">
-                                <li class="flex items-start gap-3 group/item">
-                                    <span class="material-symbols-outlined text-[18px] text-emerald-500 mt-0.5 group-hover/item:scale-125 transition-transform duration-300">check_circle</span> 
-                                    <span>Integrated complex forms with back-end validation systems.</span>
-                                </li>
-                                <li class="flex items-start gap-3 group/item">
-                                    <span class="material-symbols-outlined text-[18px] text-emerald-500 mt-0.5 group-hover/item:scale-125 transition-transform duration-300">check_circle</span> 
-                                    <span>Engineered dynamic product pages with high conversion rates.</span>
-                                </li>
-                            </ul>
+            <!-- Journey Step 2 (Previous Role) -->
+            <div class="relative flex flex-col md:flex-row-reverse items-center justify-between mb-16 group">
+                <!-- Right Side: Card (Desktop) / Full Card (Mobile) -->
+                <div class="w-full md:w-[45%] pl-[70px] md:pl-16 text-left" data-aos="fade-left">
+                    <div class="bg-surface/80 dark:bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/10 shadow-xl group-hover:border-emerald-500/50 group-hover:shadow-[0_10px_30px_rgba(16,185,129,0.2)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
+                        <!-- Glow blob -->
+                        <div class="absolute -top-10 -left-10 w-32 h-32 bg-emerald-500/20 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        
+                        <!-- Mobile Date/Title (Hidden on Desktop) -->
+                        <div class="md:hidden mb-4">
+                            <h3 class="text-2xl font-extrabold text-emerald-500">2025</h3>
+                            <p class="text-lg font-bold text-on-surface dark:text-white">Local Startups</p>
+                        </div>
+
+                        <h4 class="text-2xl md:text-3xl font-extrabold text-on-surface dark:text-white mb-2">Web Developer</h4>
+                        <p class="text-on-surface-variant dark:text-gray-400 mb-6 leading-relaxed">Built dynamic, high-converting web apps. Engineered robust forms and integrated REST APIs.</p>
+                        
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-lg">React</span>
+                            <span class="px-3 py-1 text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-lg">JavaScript</span>
+                            <span class="px-3 py-1 text-xs font-bold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-lg">Figma</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Center Node -->
+                <div class="absolute left-[33px] md:left-1/2 w-6 h-6 bg-emerald-500 rounded-full md:-translate-x-1/2 top-10 md:top-1/2 md:-translate-y-1/2 z-10 border-[5px] border-white dark:border-[#121212] shadow-[0_0_20px_#10b981] group-hover:scale-[1.5] transition-transform duration-500"></div>
+
+                <!-- Left Side: Date/Title (Desktop only) -->
+                <div class="hidden md:block w-full md:w-[45%] pr-16 text-right" data-aos="fade-right">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-3">
+                        <span class="material-symbols-outlined text-[14px] text-emerald-600 dark:text-emerald-400">history</span>
+                        <span class="text-emerald-600 dark:text-emerald-400 font-bold text-xs tracking-widest uppercase">PREVIOUS ROLE</span>
+                    </div>
+                    <h3 class="text-[40px] font-black text-on-surface dark:text-white leading-none mb-2">2025</h3>
+                    <p class="text-2xl font-bold text-on-surface-variant dark:text-gray-400">Local Startups</p>
+                </div>
             </div>
-            
+
+            <!-- Endpoint Flag -->
+            <div class="relative flex justify-start md:justify-center mt-10 z-10 pl-[18px] md:pl-0" data-aos="zoom-in">
+                <div class="w-14 h-14 rounded-full bg-white dark:bg-[#121212] border-4 border-black/10 dark:border-white/10 flex items-center justify-center shadow-xl hover:scale-110 transition-transform cursor-pointer group">
+                    <span class="material-symbols-outlined text-[#6366f1] text-3xl group-hover:-translate-y-2 transition-transform duration-500">rocket_launch</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -1129,72 +2012,6 @@
         document.getElementById('waForm').reset();
     }
 
-    // GSAP Scroll Stack Animation for Project Cards
-    gsap.registerPlugin(ScrollTrigger);
-    
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (!prefersReducedMotion) {
-        const cards = gsap.utils.toArray('.project-card');
-        
-        // Initial setup for stacked cards behind each other
-        cards.forEach((card, index) => {
-            if (index > 0) {
-                gsap.set(card, {
-                    y: -30 * index,
-                    scale: 1 - (0.05 * index),
-                    opacity: 1 - (0.15 * index),
-                    transformOrigin: "top center"
-                });
-            }
-        });
-
-        // Create scroll timeline
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#projects-pin-container",
-                pin: true,
-                start: "center center",
-                end: "+=600", // Very short scroll distance for fast changes
-                scrub: 0.1,    // Extremely fast and smooth snap
-                preventOverlaps: true,
-                fastScrollEnd: true
-            }
-        });
-
-        // Animate each card off the stack with a "hold and fast shift" effect
-        cards.forEach((card, index) => {
-            if (index < cards.length - 1) {
-                // By spacing the start times (0, 1, 2) and using a short duration (0.25),
-                // we create a period of no animation (a "hold") between shifts.
-                const startTime = index * 1; 
-                const animDuration = 0.25; // Fast shift
-
-                // The current top card swipes OUT (UP) and fades
-                tl.to(card, {
-                    y: -window.innerHeight,
-                    opacity: 0,
-                    scale: 0.9,
-                    duration: animDuration,
-                    ease: "power2.inOut"
-                }, startTime); 
-
-                // The cards behind move up and scale to become the new top card
-                for (let j = index + 1; j < cards.length; j++) {
-                    const offset = j - (index + 1);
-                    tl.to(cards[j], {
-                        y: -30 * offset,
-                        scale: 1 - (0.05 * offset),
-                        opacity: 1 - (0.15 * offset),
-                        duration: animDuration,
-                        ease: "power2.inOut"
-                    }, startTime);
-                }
-            }
-        });
-        
-        // Add a tiny empty tween at the end to hold the last card before unpinning
-        tl.to({}, {duration: 0.5});
-    }
+    // Project cards - no stacking animation needed, using horizontal slider
 </script>
 </body></html>
